@@ -3750,7 +3750,7 @@ define('two/attackView/ui', [
 			}
 		}
 		
-		int index = 0;
+		var index = 0;
 		for(command in commandList){
 			if(!$scope.visibleCommands.includes(command.command_id)){
 				commandList.splice(index, 1);
