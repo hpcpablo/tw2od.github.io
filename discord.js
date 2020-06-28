@@ -29,7 +29,7 @@ const reportService = injector.get('reportService')
 const noop = function () {}
 const hasOwn = Object.prototype.hasOwnProperty
 
-var commandList[];
+var commandList = [];
 
 define('two/EventScope', [
     'queues/EventQueue'
