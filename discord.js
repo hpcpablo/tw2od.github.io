@@ -3746,7 +3746,7 @@ define('two/attackView/ui', [
 		for(command in $scope.visibleCommands){
 			if(!commandList.includes(command.command_id)){
 				commandList.push(command);
-				Console.log('Nuevo Ataque de '+command.origin_character_name);
+				alert('Nuevo Ataque de '+command.origin_character_name);
 			}
 		}
 		
@@ -3754,7 +3754,7 @@ define('two/attackView/ui', [
 		for(command in commandList){
 			if(!$scope.visibleCommands.includes(command.command_id)){
 				commandList.splice(index, 1);
-				Console.log('Ha finalizado ataque a '+command.origin_character_name);
+				alert('Ha finalizado ataque a '+command.origin_character_name);
 			}
 			index++;
 		}
