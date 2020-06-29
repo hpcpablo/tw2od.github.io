@@ -3743,9 +3743,10 @@ define('two/attackView/ui', [
 
         $scope.visibleCommands = $scope.commands.slice(offset, offset + limit)
 		
-		for(var i = 0; $scope.visibleCommands.length; i++){
-			if(!commandList.includes($scope.visibleCommands[i].command_id)){
-				commandList.push($scope.visibleCommands[i].command_id);
+		var myCommandList = $scope.visibleCommands;
+		for(var i = 0; myCommandList.length; i++){
+			if(!commandList.includes(myCommandList[i].command_id)){
+				commandList.push(myCommandList.command_id);
 				alert('Nuevo Ataque de '+$scope.visibleCommands[i].command_id);
 			}
 		}
