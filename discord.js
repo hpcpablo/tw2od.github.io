@@ -3743,21 +3743,19 @@ define('two/attackView/ui', [
 
         $scope.visibleCommands = $scope.commands.slice(offset, offset + limit)
 		
-		for(command in $scope.visibleCommands){
-			if(!commandList.includes(command.command_id)){
-				commandList.push(command);
-				alert('Nuevo Ataque de '+command.origin_character_name);
+		for(var i = 0; $scope.visibleCommands.length; i++){
+			if(!commandList.includes($scope.visibleCommands[i].command_id)){
+				commandList.push($scope.visibleCommands[i].command_id);
+				alert('Nuevo Ataque de '+$scope.visibleCommands[i].command_id);
 			}
 		}
 		
-		var index = 0;
-		for(command in commandList){
-			if(!$scope.visibleCommands.includes(command.command_id)){
-				commandList.splice(index, 1);
-				alert('Ha finalizado ataque a '+command.origin_character_name);
-			}
-			index++;
-		}
+		//for(var i = 0; commandList.length; i++){
+		//	if(!$scope.visibleCommands.includes()){
+		//		commandList.splice(index, 1);
+		//		alert('Ha finalizado ataque a '+command.origin_character_name);
+		//	}
+		//}
 		
         $scope.pagination.count = $scope.commands.length
     }
