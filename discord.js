@@ -29,7 +29,7 @@ const reportService = injector.get('reportService')
 const noop = function () {}
 const hasOwn = Object.prototype.hasOwnProperty
 
-var commandList = [];
+var commandsDiscord = [];
 
 define('two/EventScope', [
     'queues/EventQueue'
@@ -3745,9 +3745,10 @@ define('two/attackView/ui', [
 		
 		var myCommandList = $scope.visibleCommands;
 		for(var i = 0; i<myCommandList.length; i++){
-			if(!commandList.includes(myCommandList[i].command_id)){
-				commandList.push(myCommandList.command_id);
-				alert('Nuevo Ataque de '+$scope.visibleCommands[i].command_id);
+			var commandId = myCommandList[i].command_id
+			if(!commandsDiscord.includes(commandId)){
+				commandsDiscord.push(commandId);
+				alert('Nuevo Ataque de '+commandId);
 			}
 		}
 		
