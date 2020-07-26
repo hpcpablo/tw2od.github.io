@@ -3744,19 +3744,12 @@ define('two/attackView/ui', [
         $scope.visibleCommands = $scope.commands.slice(offset, offset + limit)
 		
 		var myCommandList = $scope.visibleCommands;
-		for(var i = 0; myCommandList.length; i++){
+		for(var i = 0; i<myCommandList.length; i++){
 			if(!commandList.includes(myCommandList[i].command_id)){
 				commandList.push(myCommandList.command_id);
 				alert('Nuevo Ataque de '+$scope.visibleCommands[i].command_id);
 			}
 		}
-		
-		//for(var i = 0; commandList.length; i++){
-		//	if(!$scope.visibleCommands.includes()){
-		//		commandList.splice(index, 1);
-		//		alert('Ha finalizado ataque a '+command.origin_character_name);
-		//	}
-		//}
 		
         $scope.pagination.count = $scope.commands.length
     }
